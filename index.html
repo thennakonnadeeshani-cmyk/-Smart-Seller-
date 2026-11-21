@@ -311,13 +311,7 @@ const LANGS24 = [
   ['th','ไทย'], ['tr','Türkçe'], ['nl','Nederlands'],
   ['pl','Polski'], ['el','Ελληνικά'], ['he','עברית']
 ];
-$('langSel').innerHTML = LANGS24.map(
-  ([code, name]) => `<option value="${code}">${name}</option>`
-).join('');
-
-const savedLang = localStorage.getItem('smartSellerLanguage') || 'en';
-$('langSel').value = savedLang;
-setLang(savedLang);
+const LANG_MAP = {'English':'en','සිංහල':'si','தமிழ்':'ta','العربية':'ar','中文':'zh'};
 function setLang(l) {
   lang = l;
   const t = I18N[l] || I18N.en;
